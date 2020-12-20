@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_main"
+    app:startDestination="@id/SfeergebiedenOverviewFragment">
+    <fragment
+        android:id="@+id/SfeergebiedenOverviewFragment"
+        android:name="com.example.projectwerk.SfeerOverviewFragment"
+        android:label="SfeergebiedenOverviewFragment" >
+        <action
+            android:id="@+id/action_SfeergebiedenOverviewFragment_to_SfeergebiedenDetailFragment"
+            app:destination="@id/SfeergebiedenDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/SfeergebiedenDetailFragment"
+        android:name="com.example.projectwerk.SfeerDetailFragment"
+        android:label="SfeergebiedenDetailFragment" >
+        <argument
+            android:name="Sfeer"
+            app:argType="com.example.projectwerk.models.Sfeer" />
+    </fragment>
+</navigation>

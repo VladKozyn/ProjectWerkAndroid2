@@ -1,4 +1,4 @@
-package com.example.uiengent
+package com.example.projectwerk
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,32 +8,32 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.example.uiengent.adapters.UiAdapter
-import com.example.uiengent.adapters.UiClickListener
-import com.example.uiengent.data.remote.GhentApi
-import com.example.uiengent.databinding.FragmentUienOverviewBinding
-import com.example.uiengent.models.Ui
-import com.example.uiengent.viewmodels.UiOverviewViewModel
-import com.example.uiengent.viewmodels.UiOverviewViewModelFactory
+import com.example.projectwerk.adapters.SfeerAdapter
+import com.example.projectwerk.adapters.SfeerClickListener
+import com.example.projectwerk.data.remote.GhentApi
+import com.example.projectwerk.models.Sfeer
+import com.example.projectwerk.viewmodels.SfeerOverviewViewModel
+import com.example.projectwerk.viewmodels.SfeerOverviewViewModelFactory
 
-class UiOverviewFragment : Fragment(), UiClickListener {
+
+class SfeerOverviewFragment : Fragment(), SfeerClickListener {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-        val binding = FragmentUienOverviewBinding.inflate(inflater, container, false)
-        val factory = UiOverviewViewModelFactory(GhentApi.apiService)
-        val viewModel = ViewModelProvider(this, factory).get(UiOverviewViewModel::class.java)
+        val binding = FragmentSfeerenOverviewBinding.inflate(inflater, container, false)
+        val factory = SfeerOverviewViewModelFactory(GhentApi.apiService)
+        val viewModel = ViewModelProvider(this, factory).get(SfeerOverviewViewModel::class.java)
 
         binding.lifecycleOwner = viewLifecycleOwner
 
-        val adapter = UiAdapter(this)
+        val adapter = SfeerAdapter(this)
         binding.adapter = adapter
 
 
-        viewModel.uien.observe(viewLifecycleOwner, Observer {
+        viewModel.sfeer.observe(viewLifecycleOwner, Observer {
             //als wijzigingen, geef nieuwe lijst door aan adapter
             adapter.submitList(it)
         })
@@ -41,11 +41,13 @@ class UiOverviewFragment : Fragment(), UiClickListener {
         return binding.root
     }
 
-    override fun onUiClicked(ui: Ui) {
+    override fun onSfeerClicked(sfeer: Sfeer) {
         val directions =
-            UiOverviewFragmentDirections.actionUiOverviewFragmentToUiDetailFragment(
-                ui
+            SfeerOverviewFragmentDirections.actionSfeerOverviewFragmentToSfeerDetailFragment(
+                sfeer
             )
         findNavController().navigate(directions)
     }
+
+
 }

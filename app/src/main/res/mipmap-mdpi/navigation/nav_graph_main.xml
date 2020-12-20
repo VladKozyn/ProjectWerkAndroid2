@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_main"
+    app:startDestination="@id/uiOverviewFragment">
+    <fragment
+        android:id="@+id/uiOverviewFragment"
+        android:name="com.example.uiengent.UiOverviewFragment"
+        android:label="UiOverviewFragment" >
+        <action
+            android:id="@+id/action_uiOverviewFragment_to_uiDetailFragment"
+            app:destination="@id/uiDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/uiDetailFragment"
+        android:name="com.example.uiengent.UiDetailFragment"
+        android:label="UiDetailFragment" >
+        <argument
+            android:name="Ui"
+            app:argType="com.example.uiengent.models.Sfeer" />
+    </fragment>
+</navigation>
