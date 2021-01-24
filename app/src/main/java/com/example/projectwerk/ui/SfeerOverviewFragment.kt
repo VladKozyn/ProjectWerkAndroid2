@@ -66,12 +66,12 @@ class SfeerOverviewFragment : Fragment(), SfeerClickListener {
             if (!loadingDialogFragment.isAdded) {
                 loadingDialogFragment.show(requireActivity().supportFragmentManager, "loader")
             }
-            } else {
-                if (!loadingDialogFragment.isAdded) {
-                    loadingDialogFragment.dismissAllowingStateLoss()
-                }
+        } else {
+            if (!loadingDialogFragment.isAdded) {
+                loadingDialogFragment.dismissAllowingStateLoss()
             }
         }
+    }
 
 
     override fun onSfeerClicked(sfeer: SfeerAndFields) {
