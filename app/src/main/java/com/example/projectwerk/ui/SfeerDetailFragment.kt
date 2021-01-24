@@ -1,4 +1,4 @@
-package com.example.projectwerk
+package com.example.projectwerk.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
+import com.example.projectwerk.SfeerDetailFragmentArgs
 import com.example.projectwerk.databinding.FragmentSfeerDetailBinding
 import com.example.projectwerk.viewmodels.SfeerDetailViewModel
 
@@ -28,7 +29,7 @@ class SfeerDetailFragment : Fragment() {
             binding.sfeer =it
         })
 
-        viewModel.updateSfeer(arguments.sfeer)
+        viewModel.updateSfeer(arguments.sfeerid)
 
         return  binding.root
     }

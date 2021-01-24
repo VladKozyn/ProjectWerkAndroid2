@@ -1,7 +1,8 @@
-package com.example.projectwerk
+package com.example.projectwerk.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.projectwerk.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

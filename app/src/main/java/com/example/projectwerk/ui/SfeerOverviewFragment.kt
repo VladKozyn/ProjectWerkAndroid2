@@ -1,4 +1,4 @@
-package com.example.projectwerk
+package com.example.projectwerk.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,13 +10,16 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.projectwerk.adapters.SfeerAdapter
 import com.example.projectwerk.adapters.SfeerClickListener
-import com.example.projectwerk.data.remote.GhentApi
 import com.example.projectwerk.models.Sfeer
+import com.example.projectwerk.repos.RepositoryUtils
+import com.example.projectwerk.utils.Status
 import com.example.projectwerk.viewmodels.SfeerOverviewViewModel
 import com.example.projectwerk.viewmodels.SfeerOverviewViewModelFactory
 
 
 class SfeerOverviewFragment : Fragment(), SfeerClickListener {
+    private val loadingDialogFragment by lazy{LoadingFragment()}
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -24,7 +27,7 @@ class SfeerOverviewFragment : Fragment(), SfeerClickListener {
     ): View? {
 
         val binding = FragmentSfeerenOverviewBinding.inflate(inflater, container, false)
-        val factory = SfeerOverviewViewModelFactory(GhentApi.apiService)
+        val factory = SfeerOverviewViewModelFactory(RepositoryUtils.createSfeerRepository(requireContext()))
         val viewModel = ViewModelProvider(this, factory).get(SfeerOverviewViewModel::class.java)
 
         binding.lifecycleOwner = viewLifecycleOwner
@@ -33,13 +36,41 @@ class SfeerOverviewFragment : Fragment(), SfeerClickListener {
         binding.adapter = adapter
 
 
-        viewModel.sfeer.observe(viewLifecycleOwner, Observer {
-            //als wijzigingen, geef nieuwe lijst door aan adapter
-            adapter.submitList(it)
+        viewModel.sfeers.observe(viewLifecycleOwner, Observer {
+            it?.let{
+                resource ->
+                when (resource.status){
+                    Status.SUCCESS ->{
+                        showProgress(false)
+                        adapter.submitList(resource.data)
+                    }
+                    Status.LOADING ->{
+                        showProgress(true)
+
+                    }
+                    Status.ERROR ->{
+                        showProgress(false)
+
+                    }
+                }
+            }
         })
 
         return binding.root
     }
+
+    private fun showProgress(b: Boolean) {
+        if (b) {
+            if (!loadingDialogFragment.isAdded) {
+                loadingDialogFragment.show(requireActivity().supportFragmentManager, "loader")
+            }
+            } else {
+                if (!loadingDialogFragment.isAdded) {
+                    loadingDialogFragment.dismissAllowingStateLoss()
+                }
+            }
+        }
+
 
     override fun onSfeerClicked(sfeer: Sfeer) {
         val directions =

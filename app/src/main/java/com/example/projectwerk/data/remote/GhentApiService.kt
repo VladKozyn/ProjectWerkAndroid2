@@ -3,6 +3,7 @@ package com.example.projectwerk.data.remote
 
 import androidx.multidex.BuildConfig
 import com.example.projectwerk.models.GetApiResponse
+import com.example.projectwerk.utils.Resource
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient
@@ -33,7 +34,7 @@ private val retrofit = Retrofit.Builder()
 
 interface GhentApiService {
     @GET("https://data.stad.gent/api/records/1.0/search/?dataset=proximus-drukte-info-geografisch-gent&q=&facet=description")
-    suspend fun getSfeer(): GetApiResponse
+    suspend fun getSfeer(): Resource<GetSfeerApiResponse>
 }
 
 object GhentApi {

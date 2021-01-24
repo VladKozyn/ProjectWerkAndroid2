@@ -5,10 +5,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.projectwerk.data.local.SfeerAndFields
 import com.example.projectwerk.databinding.ListItemSfeerBinding
 import com.example.projectwerk.models.Sfeer
 
-class SfeerAdapter(private var sfeerClickListener: SfeerClickListener) : ListAdapter<Sfeer, SfeerViewHolder>(
+class SfeerAdapter(private var sfeerClickListener: SfeerClickListener) : ListAdapter<SfeerAndFields, SfeerViewHolder>(
         SfeerDiffCallback()
 ) {
 
@@ -34,12 +35,12 @@ class SfeerAdapter(private var sfeerClickListener: SfeerClickListener) : ListAda
 }
 
 
-private class SfeerDiffCallback : DiffUtil.ItemCallback<Sfeer>() {
-    override fun areItemsTheSame(oldItem: Sfeer, newItem: Sfeer): Boolean {
-        return oldItem.recordid == newItem.recordid
+private class SfeerDiffCallback : DiffUtil.ItemCallback<SfeerAndFields>() {
+    override fun areItemsTheSame(oldItem: SfeerAndFields, newItem: SfeerAndFields): Boolean {
+        return oldItem.Sfeer.recordid == newItem.Sfeer.recordid
     }
 
-    override fun areContentsTheSame(oldItem: Sfeer, newItem: Sfeer): Boolean {
+    override fun areContentsTheSame(oldItem: SfeerAndFields, newItem: SfeerAndFields): Boolean {
         return oldItem == newItem
     }
 
@@ -47,7 +48,7 @@ private class SfeerDiffCallback : DiffUtil.ItemCallback<Sfeer>() {
 
 class SfeerViewHolder(val binding: ListItemSfeerBinding) :
         RecyclerView.ViewHolder(binding.root) {
-    fun bindData(sfeer: Sfeer) {
+    fun bindData(sfeer: SfeerAndFields) {
         binding.sfeer = sfeer
     }
 

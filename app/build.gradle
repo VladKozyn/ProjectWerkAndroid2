@@ -76,9 +76,12 @@ dependencies {
     annotationProcessor "androidx.room:room-compiler:$room_version"
 
 
+
     //lifeCycle
     implementation "androidx.lifecycle:lifecycle-common:$life_cycle"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$life_cycle"
     implementation "android.arch.lifecycle:extensions:$life_cycle"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$life_cycle"
+
+    implementation "com.airbnb.android:lottie:$lottieVersion"
 }

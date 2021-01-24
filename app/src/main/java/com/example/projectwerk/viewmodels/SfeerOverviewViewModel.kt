@@ -7,11 +7,14 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.projectwerk.data.remote.GhentApiService
 import com.example.projectwerk.models.Sfeer
+import com.example.projectwerk.repos.SfeerRepository
 import kotlinx.coroutines.launch
 
 
-class SfeerOverviewViewModel(private val apiService: GhentApiService) : ViewModel() {
-    private var _sfeers = MutableLiveData<List<Sfeer>>()
+class SfeerOverviewViewModel( repository: SfeerRepository) : ViewModel() {
+    val sfeers = repository.getSfeers()
+
+   /* private var _sfeers = MutableLiveData<List<Sfeer>>()
     val sfeer: LiveData<List<Sfeer>>
         get() = _sfeers
 
@@ -29,6 +32,6 @@ class SfeerOverviewViewModel(private val apiService: GhentApiService) : ViewMode
                 Log.e("Error api ", e.message, e)
             }
         }
-    }
+    }*/
 
 }

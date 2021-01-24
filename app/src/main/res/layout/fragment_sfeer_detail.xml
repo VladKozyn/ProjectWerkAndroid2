@@ -6,7 +6,7 @@
     <data>
         <variable
             name="sfeer"
-            type="com.example.projectwerk.models.Sfeer" />
+            type="com.example.projectwerk.data.local.SfeerAndFields" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

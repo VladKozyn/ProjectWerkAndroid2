@@ -6,7 +6,7 @@
     app:startDestination="@id/SfeergebiedenOverviewFragment">
     <fragment
         android:id="@+id/SfeergebiedenOverviewFragment"
-        android:name="com.example.projectwerk.SfeerOverviewFragment"
+        android:name="com.example.projectwerk.ui.SfeerOverviewFragment"
         android:label="SfeergebiedenOverviewFragment" >
         <action
             android:id="@+id/action_SfeergebiedenOverviewFragment_to_SfeergebiedenDetailFragment"
@@ -14,10 +14,10 @@
     </fragment>
     <fragment
         android:id="@+id/SfeergebiedenDetailFragment"
-        android:name="com.example.projectwerk.SfeerDetailFragment"
+        android:name="com.example.projectwerk.ui.SfeerDetailFragment"
         android:label="SfeergebiedenDetailFragment" >
         <argument
-            android:name="Sfeer"
-            app:argType="com.example.projectwerk.models.Sfeer" />
+            android:name="Sfeerid"
+            app:argType="string" />
     </fragment>
 </navigation>

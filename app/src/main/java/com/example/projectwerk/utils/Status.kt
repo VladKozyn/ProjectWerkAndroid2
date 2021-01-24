@@ -1,4 +1,7 @@
 package com.example.projectwerk.utils
 
-class Status {
+enum class Status{
+    SUCCESS,
+    ERROR,
+    LOADING
 }
