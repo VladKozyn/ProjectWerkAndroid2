@@ -9,13 +9,13 @@
         android:name="com.example.projectwerk.ui.SfeerOverviewFragment"
         android:label="SfeergebiedenOverviewFragment" >
         <action
-            android:id="@+id/action_SfeergebiedenOverviewFragment_to_SfeergebiedenDetailFragment"
-            app:destination="@id/SfeergebiedenDetailFragment" />
+            android:id="@+id/action_SfeergebiedenOverviewFragment_to_sfeerDetailFragment"
+            app:destination="@id/sfeerDetailFragment" />
     </fragment>
     <fragment
-        android:id="@+id/SfeergebiedenDetailFragment"
+        android:id="@+id/sfeerDetailFragment"
         android:name="com.example.projectwerk.ui.SfeerDetailFragment"
-        android:label="SfeergebiedenDetailFragment" >
+        android:label="SfeerDetailFragment" >
         <argument
             android:name="sfeerid"
             app:argType="string" />

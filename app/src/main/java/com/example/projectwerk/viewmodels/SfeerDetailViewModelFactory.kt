@@ -12,7 +12,7 @@ class SfeerDetailViewModelFactory(private val repository: SfeerRepository) :
 
         if (modelClass.isAssignableFrom(SfeerDetailViewModelFactory::class.java)) {
 
-            return SfeerDetailViewModelFactory(repository) as T
+            return SfeerDetailViewModel(repository) as T
         }
 
         throw IllegalArgumentException("Unknown Viewmodel class")

@@ -76,7 +76,7 @@ class SfeerOverviewFragment : Fragment(), SfeerClickListener {
 
     override fun onSfeerClicked(sfeer: SfeerAndFields) {
         val directions =
-            SfeerOverviewFragmentDirections.actionSfeergebiedenOverviewFragmentToSfeergebiedenDetailFragment(
+            SfeerOverviewFragmentDirections.actionSfeergebiedenOverviewFragmentToSfeerDetailFragment(
                 sfeer.Sfeer.recordid
             )
         findNavController().navigate(directions)

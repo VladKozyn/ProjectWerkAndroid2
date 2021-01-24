@@ -13,5 +13,6 @@ class SfeerDetailViewModel(private val repository: SfeerRepository) : ViewModel(
 
     fun updateSfeer(id: String){
         _sfeer = repository.getSfeer(id)
+
     }
 }

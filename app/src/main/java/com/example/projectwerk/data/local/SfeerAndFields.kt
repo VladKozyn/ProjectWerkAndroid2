@@ -9,6 +9,6 @@ data class SfeerAndFields (
     val Sfeer: SfeerEntity,
 
     @Relation(parentColumn = "recordid", entityColumn = "sfeerid")
-    val fields: SfeerFieldsEntity
+    val fields: SfeerFieldsEntity?
 
     )

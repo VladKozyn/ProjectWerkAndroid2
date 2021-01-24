@@ -34,7 +34,7 @@ private val retrofit = Retrofit.Builder()
 
 
 interface GhentApiService {
-    @GET("api/records/1.0/search/?dataset=proximus-drukte-info-geografisch-gent&q=&facet=description")
+    @GET("/api/records/1.0/search/?dataset=proximus-drukte-info-geografisch-gent&q=&facet=description")
     suspend fun getSfeer(): Response<GetApiResponse>
 }
 
