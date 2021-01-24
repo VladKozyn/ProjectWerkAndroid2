@@ -1,6 +1,9 @@
 package com.example.projectwerk.data.remote
 
-class SfeerRemoteDataSource (val apiService: GhentApiService): BaseDataSource(){
+import com.example.projectwerk.data.BaseDateSource
+
+class SfeerRemoteDataSource (val apiService: GhentApiService): BaseDateSource(){
+
     suspend fun getsfeers() = getResult{apiService.getSfeer()}
 
 }

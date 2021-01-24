@@ -19,29 +19,22 @@
             android:id="@+id/tv_detail_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{sfeer.fields.naam}"
+            android:text="@{sfeer.fields.customername}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Naam " />
 
         <TextView
-            android:id="@+id/tv_detail_adres"
+            android:id="@+id/tv_detail_des"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{sfeer.fields.adres}"
+            android:text="@{sfeer.fields.total_override}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_detail_name"
-            tools:text="adres" />
+            tools:text="des" />
 
 
-        <TextView
-            android:id="@+id/tv_detail_emailinfo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{sfeer.fields.email}"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_detail_adres"
-            />
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

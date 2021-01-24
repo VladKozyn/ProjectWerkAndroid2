@@ -8,12 +8,13 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
-import com.example.projectwerk.SfeerDetailFragmentArgs
 import com.example.projectwerk.databinding.FragmentSfeerDetailBinding
+import com.example.projectwerk.repos.RepositoryUtils
 import com.example.projectwerk.viewmodels.SfeerDetailViewModel
+import com.example.projectwerk.viewmodels.SfeerDetailViewModelFactory
 
 class SfeerDetailFragment : Fragment() {
-    val arguments: SfeerDetailFragmentArgs by navArgs()
+    private val arguments: SfeerDetailFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -22,14 +23,15 @@ class SfeerDetailFragment : Fragment() {
     ): View? {
 
         val binding = FragmentSfeerDetailBinding.inflate(inflater,container,false)
-        val viewModel = ViewModelProvider(this).get((SfeerDetailViewModel::class.java))
+        val factory = SfeerDetailViewModelFactory(RepositoryUtils.createSfeerRepository((requireContext())))
+        val viewModel = ViewModelProvider(this,factory).get(SfeerDetailViewModel::class.java)
 
-
-        viewModel.sfeer.observe(viewLifecycleOwner, Observer {
+        viewModel.updateSfeer(arguments.sfeerid)
+        viewModel.sfeer.observe(viewLifecycleOwner, {
             binding.sfeer =it
         })
 
-        viewModel.updateSfeer(arguments.sfeerid)
+
 
         return  binding.root
     }

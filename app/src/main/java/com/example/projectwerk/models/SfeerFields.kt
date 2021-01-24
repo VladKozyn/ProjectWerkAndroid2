@@ -7,16 +7,17 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class SfeerFields(
-    val TimeStamp: String,
-    val customername: String,
-    val description: String,
-    val total_override: String,
-    val th1: Int,
-    val th2: Int,
-    val th3: Int,
+    val timestamp: String ="",
+        val customername: String? ="",
+        val description: String? ="",
+            val total_override: Int? =0,
+            val th1: Int? =0,
+            val th2: Int? =0,
+            val th3: Int? =0,
 
-    ) : Parcelable{
-    fun toDatabaseModel(sfeerId : String): SfeerFieldsEntity {
-        return SfeerFieldsEntity(TimeStamp, customername,description,total_override, th1,th2,th3,sfeerId )
+        ) : Parcelable{
+        fun toDatabaseModel(sfeerid : String?): SfeerFieldsEntity {
+            return SfeerFieldsEntity(timestamp, customername,description,total_override, th1,th2,th3,sfeerid )
+            //TimeStamp, customername,description,total_override, th1,th2,th3,sfeerid
+        }
     }
-}

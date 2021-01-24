@@ -6,7 +6,7 @@ import com.example.projectwerk.utils.performGetOperation
 
 class SfeerRepository(
     private val sfeerLocalDataSource: SfeerLocalDataSource,
-            private val sfeerRemoteDataSource: SfeerRemoteDataSource
+    private val sfeerRemoteDataSource: SfeerRemoteDataSource
 )
 {
     fun getSfeer(id:String) = sfeerLocalDataSource.getSfeer(id)

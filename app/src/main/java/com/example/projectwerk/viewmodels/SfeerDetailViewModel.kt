@@ -1,15 +1,13 @@
 package com.example.projectwerk.viewmodels
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.projectwerk.data.local.SfeerAndFields
-import com.example.projectwerk.models.Sfeer
 import com.example.projectwerk.repos.SfeerRepository
 
 
 class SfeerDetailViewModel(private val repository: SfeerRepository) : ViewModel() {
-    private lateinit var _sfeer = LiveData<SfeerAndFields>
+    private lateinit var _sfeer: LiveData<SfeerAndFields>
     val sfeer: LiveData<SfeerAndFields>
         get() = _sfeer
 

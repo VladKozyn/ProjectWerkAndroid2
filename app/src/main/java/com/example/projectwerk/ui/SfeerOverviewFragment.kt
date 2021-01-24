@@ -10,6 +10,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.projectwerk.adapters.SfeerAdapter
 import com.example.projectwerk.adapters.SfeerClickListener
+import com.example.projectwerk.data.local.SfeerAndFields
+import com.example.projectwerk.databinding.FragmentSfeerOverviewBinding
 import com.example.projectwerk.models.Sfeer
 import com.example.projectwerk.repos.RepositoryUtils
 import com.example.projectwerk.utils.Status
@@ -18,7 +20,7 @@ import com.example.projectwerk.viewmodels.SfeerOverviewViewModelFactory
 
 
 class SfeerOverviewFragment : Fragment(), SfeerClickListener {
-    private val loadingDialogFragment by lazy{LoadingFragment()}
+    private val loadingDialogFragment by lazy {LoadingFragment()}
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,7 +28,7 @@ class SfeerOverviewFragment : Fragment(), SfeerClickListener {
         savedInstanceState: Bundle?
     ): View? {
 
-        val binding = FragmentSfeerenOverviewBinding.inflate(inflater, container, false)
+        val binding = FragmentSfeerOverviewBinding.inflate(inflater, container, false)
         val factory = SfeerOverviewViewModelFactory(RepositoryUtils.createSfeerRepository(requireContext()))
         val viewModel = ViewModelProvider(this, factory).get(SfeerOverviewViewModel::class.java)
 
@@ -72,13 +74,14 @@ class SfeerOverviewFragment : Fragment(), SfeerClickListener {
         }
 
 
-    override fun onSfeerClicked(sfeer: Sfeer) {
+    override fun onSfeerClicked(sfeer: SfeerAndFields) {
         val directions =
-            SfeerOverviewFragmentDirections.actionSfeerOverviewFragmentToSfeerDetailFragment(
-                sfeer
+            SfeerOverviewFragmentDirections.actionSfeergebiedenOverviewFragmentToSfeergebiedenDetailFragment(
+                sfeer.Sfeer.recordid
             )
         findNavController().navigate(directions)
     }
+
 
 
 }

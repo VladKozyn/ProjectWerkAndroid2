@@ -3,11 +3,12 @@ package com.example.projectwerk.data.local
 import androidx.room.Embedded
 import androidx.room.Relation
 
-class SfeerAndFields (
+data class SfeerAndFields (
 
     @Embedded
     val Sfeer: SfeerEntity,
-            @Relation(parentColumn = "recordid", entityColumn = "sfeerId")
-            val fields: SfeerFieldsEntity
+
+    @Relation(parentColumn = "recordid", entityColumn = "sfeerid")
+    val fields: SfeerFieldsEntity
 
     )

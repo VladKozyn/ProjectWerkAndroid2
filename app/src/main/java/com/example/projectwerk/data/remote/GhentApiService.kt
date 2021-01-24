@@ -8,6 +8,7 @@ import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
@@ -33,8 +34,8 @@ private val retrofit = Retrofit.Builder()
 
 
 interface GhentApiService {
-    @GET("https://data.stad.gent/api/records/1.0/search/?dataset=proximus-drukte-info-geografisch-gent&q=&facet=description")
-    suspend fun getSfeer(): Resource<GetSfeerApiResponse>
+    @GET("api/records/1.0/search/?dataset=proximus-drukte-info-geografisch-gent&q=&facet=description")
+    suspend fun getSfeer(): Response<GetApiResponse>
 }
 
 object GhentApi {

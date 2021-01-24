@@ -17,7 +17,7 @@
         android:name="com.example.projectwerk.ui.SfeerDetailFragment"
         android:label="SfeergebiedenDetailFragment" >
         <argument
-            android:name="Sfeerid"
+            android:name="sfeerid"
             app:argType="string" />
     </fragment>
 </navigation>

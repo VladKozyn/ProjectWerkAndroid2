@@ -12,7 +12,7 @@ interface SfeerDao {
 
     @Transaction
     @Query("select * from  Sfeer where recordid=:id")
-    fun getParking(id:String): LiveData<SfeerAndFields>
+    fun getSfeer(id:String): LiveData<SfeerAndFields>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(list: List<SfeerEntity>)

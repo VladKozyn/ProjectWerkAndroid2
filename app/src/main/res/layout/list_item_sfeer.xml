@@ -7,7 +7,7 @@
 
         <variable
             name="sfeer"
-            type="com.example.projectwerk.models.Sfeer" />
+            type="com.example.projectwerk.data.local.SfeerAndFields" />
     </data>
 
 
@@ -20,7 +20,7 @@
             android:id="@+id/tv_item_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{sfeer.fields.naam}"
+            android:text="@{sfeer.fields.description}"
 
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
