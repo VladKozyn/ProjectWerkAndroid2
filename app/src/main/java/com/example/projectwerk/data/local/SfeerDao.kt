@@ -7,11 +7,11 @@ import androidx.room.*
 interface SfeerDao {
 
     @Transaction
-    @Query("select * from  Sfeer")
+    @Query("select * from  sfeer")
     fun getAllSfeers(): LiveData<List<SfeerAndFields>>
 
     @Transaction
-    @Query("select * from  Sfeer where recordid=:id")
+    @Query("select * from  sfeer where recordid=:id")
     fun getSfeer(id:String): LiveData<SfeerAndFields>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

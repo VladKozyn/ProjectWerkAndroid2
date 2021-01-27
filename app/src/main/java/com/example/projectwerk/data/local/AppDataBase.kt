@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import com.example.projectwerk.models.Sfeer
 import com.example.projectwerk.models.SfeerFields
 
-@Database(entities =[SfeerEntity::class, SfeerFieldsEntity::class],version = 7,exportSchema = false)
+@Database(entities =[SfeerEntity::class, SfeerFieldsEntity::class],version = 15,exportSchema = false)
 abstract class AppDataBase:RoomDatabase() {
 
     abstract fun sfeerDao(): SfeerDao

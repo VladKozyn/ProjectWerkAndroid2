@@ -12,26 +12,138 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/white"
+        android:padding="@dimen/twentyMargin"
         >
 
 
+        <!--customername-->
+        <TextView
+            android:id="@+id/LabelName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textStyle="bold"
+            android:text="@string/LabelName"
+         />
         <TextView
             android:id="@+id/tv_detail_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{sfeer.fields.customername}"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/LabelName"
             tools:text="Naam " />
 
+      <!--Description-->
+        <TextView
+            android:id="@+id/tv_Labeldetail_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/description"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/twentyMargin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_detail_name"
+            tools:text="Description: " />
         <TextView
             android:id="@+id/tv_detail_des"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{sfeer.fields.total_override}"
+            android:text="@{sfeer.fields.description}"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_detail_name"
-            tools:text="des" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_Labeldetail_name"
+            tools:text="description" />
+
+        <!--total_override-->
+        <TextView
+            android:id="@+id/tv_Labeltotal_override"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/LabelTotalOverride"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/twentyMargin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_detail_des"
+            tools:text="Active override number: " />
+        <TextView
+            android:id="@+id/tv_total_override"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(sfeer.fields.total_override)}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_Labeltotal_override"
+            tools:text="Current total_override" />
+
+        <TextView
+            android:id="@+id/LabelForTh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/possible_thresholds"
+            android:layout_marginTop="@dimen/twentyMargin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_total_override"
+            android:textStyle="bold"
+            tools:text="Possible thresholds : " />
+        <!--override 1-->
+        <TextView
+            android:id="@+id/tv_LabelTH1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/threshold_1"
+            android:layout_marginTop="@dimen/smallDp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/LabelForTh"
+            tools:text="Threshold 1 : " />
+        <TextView
+            android:id="@+id/tv_th1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(sfeer.fields.th1)}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_LabelTH1"
+            tools:text="th1" />
+
+
+        <!--override 2-->
+        <TextView
+            android:id="@+id/tv_LabelTH2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/threshold_2"
+            android:layout_marginTop="@dimen/smallDp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_th1"
+            tools:text="Threshold 2 : " />
+        <TextView
+            android:id="@+id/tv_th2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(sfeer.fields.th2)}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_LabelTH2"
+            tools:text="th2" />
+
+
+        <!--override 3-->
+        <TextView
+            android:id="@+id/tv_LabelTH3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/threshold_3"
+            android:layout_marginTop="@dimen/smallDp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_th2"
+            tools:text="Threshold 1 : " />
+        <TextView
+            android:id="@+id/tv_th3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(sfeer.fields.th3)}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_LabelTH3"
+            tools:text="th3" />
 
 
 

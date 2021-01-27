@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">ProjectWerk</string>
+    <string name="LabelName">Customername:</string>
+    <string name="LabelTotalOverride">Current total override number:</string>
+    <string name="LabelTotalOVeride">Active threshold number:</string>
+    <string name="possible_thresholds">Possible thresholds after 0:</string>
+    <string name="threshold_1">Threshold 1 :</string>
+    <string name="threshold_2">Threshold 2 :</string>
+    <string name="threshold_3">Threshold 3 :</string>
+    <string name="description">Description:</string>
 </resources>

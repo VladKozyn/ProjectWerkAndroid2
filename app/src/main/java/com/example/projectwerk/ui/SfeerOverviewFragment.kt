@@ -43,15 +43,15 @@ class SfeerOverviewFragment : Fragment(), SfeerClickListener {
                 resource ->
                 when (resource.status){
                     Status.SUCCESS ->{
-                        showProgress(false)
+                   //     showProgress(false)
                         adapter.submitList(resource.data)
                     }
                     Status.LOADING ->{
-                        showProgress(true)
+                     //   showProgress(true)
 
                     }
                     Status.ERROR ->{
-                        showProgress(false)
+                      //  showProgress(false)
 
                     }
                 }

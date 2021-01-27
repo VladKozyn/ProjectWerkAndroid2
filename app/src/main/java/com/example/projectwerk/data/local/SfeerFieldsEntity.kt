@@ -14,15 +14,15 @@ import androidx.room.PrimaryKey
     )
 ))
 class SfeerFieldsEntity (
-        val timestamp: String? ="",
-        val customername: String? ="",
-        val description: String? ="",
-        val total_override: Int? =0,
-        val th1: Int? =0,
-        val th2: Int? =0,
-        val th3: Int? =0,
+        val timestamp: String,
+        val customername: String,
+        val description: String,
+        val total_override: Int,
+        val th1: Int,
+        val th2: Int,
+        val th3: Int,
     @ColumnInfo(name="sfeerid", index = true)
-    var sfeerid: String? = ""
+    var sfeerid: String?
 ){
     @PrimaryKey(autoGenerate = true)
     var id: Int =0

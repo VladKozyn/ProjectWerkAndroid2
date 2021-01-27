@@ -10,7 +10,7 @@ class SfeerDetailViewModelFactory(private val repository: SfeerRepository) :
     ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
 
-        if (modelClass.isAssignableFrom(SfeerDetailViewModelFactory::class.java)) {
+        if (modelClass.isAssignableFrom(SfeerDetailViewModel::class.java)) {
 
             return SfeerDetailViewModel(repository) as T
         }

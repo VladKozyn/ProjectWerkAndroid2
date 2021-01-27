@@ -38,11 +38,13 @@ class SfeerAdapter(private var sfeerClickListener: SfeerClickListener) : ListAda
 
 private class SfeerDiffCallback : DiffUtil.ItemCallback<SfeerAndFields>() {
     override fun areItemsTheSame(oldItem: SfeerAndFields, newItem: SfeerAndFields): Boolean {
-        return oldItem.Sfeer?.recordid == newItem.Sfeer?.recordid
+        return oldItem.fields?.sfeerid === newItem.fields?.sfeerid
+    // return oldItem.fields?.sfeerid==newItem.fields?.sfeerid
     }
 
     override fun areContentsTheSame(oldItem: SfeerAndFields, newItem: SfeerAndFields): Boolean {
-        return oldItem.equals( newItem)
+        return oldItem.equals(newItem)
+      //  return oldItem.fields?.sfeerid==newItem.fields?.sfeerid
     }
 
 }

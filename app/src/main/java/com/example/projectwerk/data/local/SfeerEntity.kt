@@ -5,8 +5,9 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 
-@Entity(tableName ="Sfeer")
+@Entity(tableName ="sfeer")
 class SfeerEntity (
 @PrimaryKey
+//@ColumnInfo(name = "recordid")
 val recordid: String
 )
